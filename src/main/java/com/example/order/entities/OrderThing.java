@@ -1,4 +1,4 @@
-package order.entities;
+package com.example.order.entities;
 
 import javax.persistence.*;
 import java.util.UUID;

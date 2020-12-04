@@ -1,6 +1,6 @@
-package order.dto;
+package com.example.order.dto;
 
-import order.entities.OrderThing;
+import com.example.order.entities.OrderThing;
 
 import java.util.List;
 

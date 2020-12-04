@@ -1,7 +1,7 @@
-package order.dto;
+package com.example.order.dto;
 
 
-import order.entities.Order;
+import com.example.order.entities.Order;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package order.service;
+package com.example.order.service;
 
+import com.example.order.dto.Customer;
+import com.example.order.dto.ThingDTO;
+import com.example.order.entities.OrderThing;
+import com.example.order.repo.OrderRepository;
+import com.example.order.repo.OrderThingRepository;
 import javassist.NotFoundException;
-import order.dto.Customer;
-import order.dto.ThingDTO;
-import order.entities.Order;
-import order.entities.OrderThing;
-import order.repo.OrderRepository;
-import order.repo.OrderThingRepository;
+import com.example.order.entities.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +24,7 @@ import java.util.UUID;
 @Service
 public class OrderService {
 
-    private static final String SELLER_URL = "http://localhost:8089";
+    private static final String SELLER_URL = "http://sellers-service:8089";
     private final RestTemplate restTemplate = new RestTemplate();
     private final HttpHeaders headers = new HttpHeaders();
     private final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);
@@ -87,6 +87,7 @@ public class OrderService {
         }
         return flag;
     }
+
 
     @Transactional(readOnly = true)
     public List<Order> getAllOrders() {
